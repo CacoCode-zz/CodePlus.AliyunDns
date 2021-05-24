@@ -55,7 +55,6 @@ namespace DNSR.Jobs
         private string GetPublicIp()
         {
             var str = new WebClient().DownloadString("https://pv.sohu.com/cityjson");
-            Console.WriteLine(str);
             var regex = new Regex(@"(\d+\.\d+\.\d+\.\d+)");
             var match = regex.Match(str);
             if (match.Success)
