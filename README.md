@@ -33,4 +33,4 @@
     "RRKeyWord": "m" // 要解析域名的记录值 m.codeplus.vip
   }
 ```
-最后直接发布，可以基于NSSM 装成 windows 服务使用
+最后直接发布，可以基于 NSSM 装成 windows 服务使用，详细步骤请自行查阅
