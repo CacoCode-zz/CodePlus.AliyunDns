@@ -25,13 +25,13 @@ namespace DNSR
         {
             Log.Logger = new LoggerConfiguration()
                 .Enrich.FromLogContext()
+                .WriteTo.Console()
                 .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day)
                 .CreateLogger();
 
             var builder = new HostBuilder()
                 .ConfigureAppConfiguration(ConfigureAppConfiguration)
                 .ConfigureServices((hostContext, services) => { ConfigureServices(services, hostContext); });
-
             await builder.RunConsoleAsync();
         }
 
