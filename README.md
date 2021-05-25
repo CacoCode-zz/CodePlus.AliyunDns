@@ -33,4 +33,14 @@
     "RRKeyWord": "m" // 要解析域名的记录值 m.codeplus.vip
   }
 ```
-最后直接发布，可以基于 NSSM 装成 windows 服务使用，详细步骤请自行查阅
+## 部署
+### Windows
+可以基于 NSSM 装成 windows 服务使用，详细步骤请自行查阅
+### Dockfile
+```
+docker build --pull --rm -f "Dockerfile" -t [镜像名称]:[版本号] "." 
+```
+```
+docker run -e TZ="Asia/Shanghai" -d -p 80:80 [镜像名称]:[版本号]
+```
+**PS:时区一定要设置为上海的时区，不然定时任务会有时差**
